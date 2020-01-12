@@ -88,10 +88,11 @@ public class FileUtil {
 		BufferedReader br = null;
 		List<String> strList = new ArrayList<>();
 		try {
+			String str = "";
 			br = new BufferedReader(new FileReader(new File(pathname)));
-			do {
-				strList.add(br.readLine());
-			}while(br.read()!=-1);
+			while((str=br.readLine())!=null) {
+				strList.add(str);
+			}
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 			return null;
