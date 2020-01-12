@@ -5,6 +5,36 @@ import java.util.Random;
 
 public class StringUtil {
 	/**
+	 * @Title: isNull   
+	 * @Description: 判断字符串是否为空   
+	 * @param: @param str
+	 * @param: @return      
+	 * @return: boolean      
+	 * @throws
+	 */
+	public static boolean isNull(String str) {
+		if(str==null) {
+			return true;
+		}
+		/** 去空格后，如果为"",返回true **/
+		str = str.trim();
+		if("".equals(str)) {
+			return true;
+		}
+		return false;
+	}
+	/**
+	 * @Title: isNotNull   
+	 * @Description: 判断字符串不为空   
+	 * @param: @param str
+	 * @param: @return      
+	 * @return: boolean      
+	 * @throws
+	 */
+	public static boolean isNotNull(String str) {
+		return !isNull(str);
+	}
+	/**
 	 * @Title: isBlank   
 	 * @Description: 判断字符串是否为空  
 	 * @param: @param str
