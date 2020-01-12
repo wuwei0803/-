@@ -4,13 +4,13 @@ import java.io.UnsupportedEncodingException;
 import java.util.Random;
 
 public class StringUtil {
-	
-	/** 
-	 * @Title: isBlank 
-	 * @Description: 判断字符串是否为空
-	 * @param str
-	 * @return
-	 * @return: boolean
+	/**
+	 * @Title: isBlank   
+	 * @Description: 判断字符串是否为空  
+	 * @param: @param str
+	 * @param: @return      
+	 * @return: boolean      
+	 * @throws
 	 */
 	public static boolean isBlank(String str) {
 		if(str==null) {
@@ -24,48 +24,48 @@ public class StringUtil {
 		}
 		return false;
 	}
-	
-	/** 
-	 * @Title: isNotBlank 
-	 * @Description: 字符串不为空，返回true
-	 * @param str
-	 * @return
-	 * @return: boolean
+	/**
+	 * @Title: isNotBlank   
+	 * @Description: 字符串内容不为空，返回true   
+	 * @param: @param str
+	 * @param: @return      
+	 * @return: boolean      
+	 * @throws
 	 */
 	public static boolean isNotBlank(String str) {
 		return !isBlank(str);
 	}
 	
-	/** 
-	 * @Title: isPhoneNum 
-	 * @Description: 判断字符串是否为手机号
-	 * @param str
-	 * @return
-	 * @return: boolean
+	/**
+	 * @Title: isPhoneNum   
+	 * @Description: 判断字符串是否为手机号   
+	 * @param: @param str
+	 * @param: @return      
+	 * @return: boolean      
+	 * @throws
 	 */
 	public static boolean isPhoneNum(String str) {
 		String regex = "1[3578]\\d{9}";
 		return str.matches(regex);
 	}
-	
-	/** 
-	 * @Title: isEmail 
-	 * @Description: 验证是否为邮箱
-	 * @param str
-	 * @return
-	 * @return: boolean
+	/**
+	 * @Title: isEmail   
+	 * @Description: 验证是否为邮箱   
+	 * @param: @param str zhanggm1002@qq.com
+	 * @param: @return      
+	 * @return: boolean      
+	 * @throws
 	 */
 	public static boolean isEmail(String str) {
 		String regex = "[A-Za-z0-9]+@[A-Za-z0-9]+.(com|cn|com.cn|net)";
 		return str.matches(regex);
 	}
-	
-	/** 
-	 * @Title: isLetter 
-	 * @Description: TODO
-	 * @param str
-	 * @return
-	 * @return: boolean
+	/**
+	 * @Title: isLetter   
+	 * @Description: TODO(描述这个方法的作用)   
+	 * @param: @return      
+	 * @return: boolean      
+	 * @throws
 	 */
 	public static boolean isLetter(String str) {
 		if(isNotBlank(str)) {
@@ -75,29 +75,29 @@ public class StringUtil {
 		}
 		return false;
 	}
-	
-	/** 
-	 * @Title: getRandomAzChar 
-	 * @Description: 获取随机字符(a-z)
-	 * @return
-	 * @return: char
+	/**
+	 * @Title: getRandomAzChar   
+	 * @Description: 获取随机字符（a-z）   
+	 * @param: @return      
+	 * @return: char      
+	 * @throws
 	 */
 	public static char getRandomAzChar() {
-		//随即类
+		//随机类
 		Random random = new Random();
-		//开始字符再acsii码
+		//开始字符在acsii码
 		int startChar = 'a'+0;
 		//生成随机字符
 		char newChar = (char)(startChar+random.nextInt(26));
 		return newChar;
 	}
-	
-	/** 
-	 * @Title: getRandomLetter 
-	 * @Description: 获取随机字符串
-	 * @param num
-	 * @return
-	 * @return: String
+	/**
+	 * @Title: getRandomLetter   
+	 * @Description: 获取随机字符串 
+	 * @param: @param num
+	 * @param: @return      
+	 * @return: String      
+	 * @throws
 	 */
 	public static String getRandomLetter(int num) {
 		//保存生成胡字符
@@ -110,30 +110,31 @@ public class StringUtil {
 		return sb.toString();
 	}
 	
-	/** 
-	 * @Title: getRandomNumberChar 
-	 * @Description: 获取随机数字字符
-	 * @return
-	 * @return: char
+	/**
+	 * @Title: getRandomNumberChar   
+	 * @Description: 获取随机数字字符 
+	 * @param: @return      
+	 * @return: char      
+	 * @throws
 	 */
 	public static char getRandomNumberChar() {
 		//随机类
 		Random random = new Random();
-		//开始字符再acsii码
+		//开始字符在acsii码
 		int startChar = '0'+0;
 		//生成随机字符
 		char newChar = (char)(startChar+random.nextInt(10));
 		return newChar;
 	}
-	
-	/** 
-	 * @Title: getRandomLetterAndNumBerStr 
-	 * @Description: 获得随机字符串(a-z0-9)
-	 * @param num
-	 * @return
-	 * @return: String
+	/**
+	 * @Title: getRandomLetterAndNumberStr   
+	 * @Description: 获得随机字符串（a-z0-9）   
+	 * @param: @param num
+	 * @param: @return      
+	 * @return: String      
+	 * @throws
 	 */
-	public static String getRandomLetterAndNumBerStr(int num) {
+	public static String getRandomLetterAndNumberStr(int num) {
 		StringBuffer sb = new StringBuffer();
 		Random random = new Random();
 		for (int i = 0; i < num; i++) {
@@ -146,50 +147,52 @@ public class StringUtil {
 		return sb.toString();
 	}
 	
-	/** 
-	 * @Title: randomChineseString 
-	 * @Description: 返回一个中文文字//GB2312中文简体
-	 * @return
-	 * @return: String
+	/**
+	 * @Title: randomChineseString   
+	 * @Description: 返回一个中文文字//GB2312中文简体  
+	 * @param: @return      
+	 * @return: String      
+	 * @throws
 	 */
 	public static String randomChineseString() {
 		String str = null;
-		int highPos,lowPos;
+		int highPos, lowPos;
 		Random random = new Random();
-		highPos = (176 + Math.abs(random.nextInt(39)));//区码，0xA0打头，从第16区开始，即0xB0=11*16=176,16~55一级汉字，56~87二级汉字
+		highPos = (176 + Math.abs(random.nextInt(39)));// 区码，0xA0打头，从第16区开始，即0xB0=11*16=176,16~55一级汉字，56~87二级汉字
 		random = new Random();
 		lowPos = 161 + Math.abs(random.nextInt(94));// 位码，0xA0打头，范围第1~94列
 		byte[] bArr = new byte[2];
 		bArr[0] = (new Integer(highPos)).byteValue();
 		bArr[1] = (new Integer(lowPos)).byteValue();
 		try {
-			str = new String(bArr,"GB2312");//区位码组合成汉字
+			str = new String(bArr, "GB2312"); // 区位码组合成汉字
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
 		}
 		return str;
 	}
-	
-	/** 
-	 * @Title: randomChineseString 
-	 * @Description: 返回参数length个中文汉字字符串，字符集必须在GB2312(相当于中文简体)
-	 * @param length
-	 * @return
-	 * @return: String
+	/**
+	 * @Title: randomChineseString   
+	 * @Description: 返回参数length个中文汉字字符串，字符集必须在GB2312(相当于中文简体)范围内   
+	 * @param: @param length
+	 * @param: @return      
+	 * @return: String      
+	 * @throws
 	 */
 	public static String randomChineseString(int length) {
 		String str = "";
 		for (int i = 0; i < length; i++) {
 			str += randomChineseString();
 		}
+
 		return str;
 	}
-	
-	/** 
-	 * @Title: randomChineseName 
+	/**
+	 * @Title: randomChineseName   
 	 * @Description: 返回中文姓名，必须以真实姓开头
-	 * @return
-	 * @return: String
+	 * @param: @return      
+	 * @return: String      
+	 * @throws
 	 */
 	public static String randomChineseName() {
 		String[] surname = { "赵", "钱", "孙", "李", "周", "吴", "郑", "王", "冯", "陈", "褚", "卫", "蒋", "沈", "韩", "杨", "朱", "秦",
@@ -222,40 +225,39 @@ public class StringUtil {
 				"颛孙", "端木", "巫马", "公西", "漆雕", "车正", "壤驷", "公良", "拓跋", "夹谷", "宰父", "谷梁", "段干", "百里", "东郭", "微生", "梁丘",
 				"左丘", "东门", "西门", "南宫", "第五", "公仪", "公乘", "太史", "仲长", "叔孙", "屈突", "尔朱", "东乡", "相里", "胡母", "司城", "张廖",
 				"雍门", "毋丘", "贺兰", "綦毋", "屋庐", "独孤", "南郭", "北宫", "王孙" };
-		//随机获取姓氏
+		// 随机获取姓氏
 		String name1 = surname[RandomUtil.random(0, surname.length - 1)];
-		//随机获取1-2个中文
+		// 随机获取1-2个中文
 		String name2 = randomChineseString(RandomUtil.random(1, 2));
 		return name1 + name2;
 	}
 	
-	/** 
-	 * @Title: isHttpUrl 
-	 * @Description: 验证是否是URL
-	 * @param str
+	/**
+	 * 验证是否是URL
+	 * @param url
 	 * @return
-	 * @return: boolean
 	 */
-	public static boolean isHttpUrl(String str) {
-		//转换为小写
-		str = str.toLowerCase();
-		String regex = "^((https|http|ftp|rtsp|mms)?://)" //https、http、ftp、rtsp、mms
-				+ "?(([0-9a-z_!~*'().&=+$%-]+: )?[0-9a-z_!~*'().&=+$%-]+@)?" //ftp的user@  
-	               + "(([0-9]{1,3}\\.){3}[0-9]{1,3}" // IP形式的URL- 例如：199.194.52.184               
-	                 + "|" // 允许IP和DOMAIN（域名） 或单域名
-	                 + "[0-9a-z]*"  // 或单域名
-	                 + "|" // 允许IP和DOMAIN（域名） 或单域名
-	                 + "([0-9a-z_!~*'()-]+\\.)*" // 域名- www.  
-	                 + "([0-9a-z][0-9a-z-]{0,61})?[0-9a-z]\\." // 二级域名  
-	                + "[a-z]{2,6})" // first level domain- .com or .museum  
-	                + "(:[0-9]{1,5})?" // 端口号最大为65535,5位数
-	                + "((/?)|" // a slash isn't required if there is no file name  
-	                + "(/[0-9a-z_!~*'().;?:@&=+$,%#-]+)+/?)$";  
-	        return  str.matches(regex);	
+	public static boolean isHttpUrl(String str){
+		 //转换为小写
+        str = str.toLowerCase();
+        String regex = "^((https|http|ftp|rtsp|mms)?://)"  //https、http、ftp、rtsp、mms
+                + "?(([0-9a-z_!~*'().&=+$%-]+: )?[0-9a-z_!~*'().&=+$%-]+@)?" //ftp的user@  
+               + "(([0-9]{1,3}\\.){3}[0-9]{1,3}" // IP形式的URL- 例如：199.194.52.184               
+                 + "|" // 允许IP和DOMAIN（域名） 或单域名
+                 + "[0-9a-z]*"  // 或单域名
+                 + "|" // 允许IP和DOMAIN（域名） 或单域名
+                 + "([0-9a-z_!~*'()-]+\\.)*" // 域名- www.  
+                 + "([0-9a-z][0-9a-z-]{0,61})?[0-9a-z]\\." // 二级域名  
+                + "[a-z]{2,6})" // first level domain- .com or .museum  
+                + "(:[0-9]{1,5})?" // 端口号最大为65535,5位数
+                + "((/?)|" // a slash isn't required if there is no file name  
+                + "(/[0-9a-z_!~*'().;?:@&=+$,%#-]+)+/?)$";  
+        return  str.matches(regex);	
 	}
 	
 	public static void main(String[] args) {
-		
+		boolean httpUrl = isHttpUrl("https://127.0.0.1/a.html");
+		System.out.println(httpUrl);
 	}
 	
 }
